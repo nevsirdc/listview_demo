@@ -46,11 +46,14 @@ class MainApp extends StatelessWidget {
                 child: ListView(
                   children: [
                     const Padding(padding: EdgeInsets.all(15)),
-                    for (var value in gifts.values)
+                    for (var gift in gifts.entries)
                       ListTile(
                         leading: const Icon(Icons.add),
-                        title: Text(value),
-                        subtitle: Text(value),
+                        title: Text(
+                          gift.key,
+                          style: const TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        subtitle: Text(gift.value),
                       ),
                   ],
                 ),
